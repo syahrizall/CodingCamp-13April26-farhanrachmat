@@ -4,7 +4,7 @@ Aplikasi web sederhana untuk mencatat dan memvisualisasikan pengeluaran harianmu
 
 <div align="center">
 
-[![Open App](https://img.shields.io/badge/Buka_Aplikasi-6c63ff?style=for-the-badge&logo=googlechrome&logoColor=white)](task.html)
+[![Open App](https://img.shields.io/badge/Buka_Aplikasi-6c63ff?style=for-the-badge&logo=googlechrome&logoColor=white)](https://syahrizall.github.io/CodingCamp-13April26-farhanrachmat/task.html)
 
 </div>
 
@@ -99,6 +99,6 @@ Klik tombol 🌙 / ☀️ di pojok kanan atas header untuk beralih antara dark d
 
 **Dibuat dengan ❤️ oleh farhanrachmat**
 
-[![Coba Sekarang](https://img.shields.io/badge/Coba_Sekarang-6c63ff?style=for-the-badge&logo=googlechrome&logoColor=white)](task.html)
+[![Coba Sekarang](https://img.shields.io/badge/Coba_Sekarang-6c63ff?style=for-the-badge&logo=googlechrome&logoColor=white)](https://syahrizall.github.io/CodingCamp-13April26-farhanrachmat/task.html)
 
 </div>
