@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expense & Budget Visualizer</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- Header / Balance -->
+  <header class="header">
+    <div class="header-top">
+      <h1 class="app-title">💸 Expense Tracker</h1>
+      <!-- Dark / Light mode toggle -->
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark/light mode">
+        <span class="theme-icon" id="theme-icon">🌙</span>
+      </button>
+    </div>
+    <div class="balance-card">
+      <p class="balance-label">Total Spent</p>
+      <p class="balance-amount">Rp <span id="total">0</span></p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Add Transaction Form -->
+    <section class="card" id="form-section">
+      <h2 class="section-title">Add Transaction</h2>
+      <form id="transaction-form">
+        <div class="form-group">
+          <label for="name">Item Name</label>
+          <input type="text" id="name" placeholder="e.g. Lunch, Grab, Netflix" autocomplete="off" />
+        </div>
+        <div class="form-group">
+          <label for="amount">Amount (Rp)</label>
+          <input type="number" id="amount" placeholder="e.g. 25000" min="1" />
+        </div>
+        <div class="form-group">
+          <label for="category">Category</label>
+          <select id="category">
+            <option value="">Select Category</option>
+            <option value="Food">🍔 Food</option>
+            <option value="Transport">🚗 Transport</option>
+            <option value="Fun">🎮 Fun</option>
+            <option value="Health">💊 Health</option>
+            <option value="Shopping">🛍️ Shopping</option>
+            <option value="Other">📦 Other</option>
+            <!-- Custom categories injected here by JS -->
+          </select>
+        </div>
+        <button type="submit" class="btn-primary">+ Add Transaction</button>
+      </form>
+    </section>
+
+    <!-- Custom Category Manager -->
+    <section class="card" id="category-section">
+      <h2 class="section-title">Custom Categories</h2>
+      <div class="custom-category-form">
+        <input type="text" id="custom-cat-name" placeholder="Category name (e.g. Gym)" maxlength="24" autocomplete="off" />
+        <input type="text" id="custom-cat-emoji" placeholder="Emoji (e.g. 🏋️)" maxlength="4" autocomplete="off" />
+        <button type="button" class="btn-secondary" id="add-category-btn">+ Add</button>
+      </div>
+      <ul id="custom-category-list" class="custom-category-list"></ul>
+    </section>
+
+    <!-- Chart -->
+    <section class="card" id="chart-section">
+      <h2 class="section-title">Spending by Category</h2>
+      <div class="chart-wrapper">
+        <canvas id="chart"></canvas>
+      </div>
+      <p class="chart-empty" id="chart-empty">No data yet. Add a transaction!</p>
+    </section>
+
+    <!-- Transaction History -->
+    <section class="card" id="history-section">
+      <div class="history-header">
+        <h2 class="section-title">History</h2>
+        <button class="btn-danger-sm" id="clear-all" title="Clear all transactions">Clear All</button>
+      </div>
+
+      <!-- Sort Controls -->
+      <div class="sort-bar">
+        <span class="sort-label">Sort by:</span>
+        <button class="sort-btn active" data-sort="date">Date</button>
+        <button class="sort-btn" data-sort="amount-desc">Amount ↓</button>
+        <button class="sort-btn" data-sort="amount-asc">Amount ↑</button>
+        <button class="sort-btn" data-sort="category">Category</button>
+      </div>
+
+      <ul id="transaction-list">
+        <li class="empty-state">No transactions yet.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
